@@ -14,11 +14,11 @@ import com.sikku.tasksubmissionservice.model.Task;
 @FeignClient(name = "TASK-SERVICE")
 public interface ITaskServiceFeignClient {
 	
-	@GetMapping("/{taskId}")
+	@GetMapping("/api/v1/task/{taskId}")
 	public ResponseEntity<Task> getTaskById(@PathVariable Long taskId, @RequestHeader("authorization") String jwtToken)
 			throws Exception;
 	
-	@PutMapping("/{taskId}/complete")
+	@PutMapping("/api/v1/task/{taskId}/complete")
 	public ResponseEntity<Task> completeTask(@PathVariable Long taskId, @RequestHeader("authorization") String jwtToken)
 			throws Exception;
 
